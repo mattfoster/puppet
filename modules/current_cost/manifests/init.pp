@@ -3,7 +3,8 @@ class current_cost {
     ensure => installed,
   }
 
-  package { "collectd":
+  package { "ruby-collectd":
+    name     => 'collectd',
     provider => gem,
   }
 
