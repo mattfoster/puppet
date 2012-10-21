@@ -7,14 +7,17 @@ manual steps.
 
 ## Usage
 
-Install Raspbian to your SD card. I'm using wheezy, because that gives me
-recent versions of ruby and collectd.
+Install [Raspbian](http://www.raspbian.org) to your SD card. I'm using wheezy,
+because that gives me recent versions of ruby and [collectd](http://collectd.org).
   
 Manually install the `collectd` rubygem. There's a 
 [bug](http://projects.puppetlabs.com/issues/1398) in puppet which means
 you can't install two different types of package with the same name.
  
     sudo gem install collectd
+
+It may be possible to work around this by using puppet to manually run `gem
+install`, but I haven't gone down that route yet.
 
 Now install puppet:
 
@@ -31,6 +34,16 @@ the puppet directory, and run:
     sudo puppet apply --modulepath=modules nodes.pp 
 
 That's it!
+
+## Current Cost 
+
+[Current Cost](http://www.currentcost.com/) is a British energy monitoring
+company which sells some great kit, including models like the 
+[Envi](http://www.currentcost.com/product-envi.html) which sport serial ports.
+
+This repo includes my Current Cost monitoring daemon. It's a bit hacky, but
+seems to work relatively well!  For more details, check out 
+[my blog](http://hackerific.net/2012/02/27/monitoring-things-with-collectd/).
 
 ## More?
 
