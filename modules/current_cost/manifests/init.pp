@@ -13,16 +13,17 @@ class current_cost {
     "ruby-serialport":;
   }
 
-  file { "/usr/local/bin/current_cost.rb":
+  file { "/etc/init.d/current_cost":
     owner  => root,
     group  => root,
     mode   => 0755,
     source => "puppet:///modules/current_cost/current_cost.rb",
+    notify => Service["current_cost"],
   }
 
-  service { "current_cost.rb":
-    status => "/usr/local/bin/current_cost.rb",
-    provider => "init",
+  service { "current_cost":
+    ensure  => running,
+    enable  => true
   }
 
 }

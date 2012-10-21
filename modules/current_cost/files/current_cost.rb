@@ -1,4 +1,13 @@
 #! /usr/bin/env ruby
+### BEGIN INIT INFO
+# Provides:          current_cost
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Current Cost monitoring script
+# Description:       Monitor a Current Cost device
+### END INIT INFO
 
 require 'rubygems'
 require 'daemons'
