@@ -3,11 +3,6 @@ class current_cost {
     ensure => installed,
   }
 
-  package { "ruby-collectd":
-    name     => 'collectd',
-    provider => gem,
-  }
-
   package { 
     "ruby-daemons":; 
     "ruby-serialport":;
